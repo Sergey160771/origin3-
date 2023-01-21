@@ -7,7 +7,7 @@ package Homework1;
 import java.util.Arrays;
 import java.util.Random;
 
-public class task3 {
+public class Task3 {
     public static void main(String[] args) {
         moveThreeEnd();
     }
@@ -16,17 +16,17 @@ public class task3 {
         int[] array = new int[50];
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(0,4);
+            array[i] = random.nextInt(0, 4);
         }
+        System.out.println(Arrays.toString(array));
         int val = 3;
         int left = 0;
         int right = array.length - 1;
         int temp = 0;
         while (left <= right) {
             if (array[left] == val && array[right] != val) {
-                temp = array[left];
                 array[left] = array[right];
-                array[right] = temp;
+                array[right] = val;
                 right--;
                 left++;
             }
@@ -34,6 +34,10 @@ public class task3 {
                 right--;
             }
             if (array[left] != val) {
+                left++;
+            }
+            if (array[left] == val && array[right] == val) {
+                right--;
                 left++;
             }
         }
