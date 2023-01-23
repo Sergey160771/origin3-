@@ -7,8 +7,6 @@ package Homework1;
 import java.util.Scanner;
 
 
-import java.util.Arrays;
-
 public class Task2 {
     public static void main(String[] args) {
         System.out.println(leapYear());
@@ -22,6 +20,7 @@ public class Task2 {
             return true;
         } else {
             return false;
+
         }
     }
 }

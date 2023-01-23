@@ -1,36 +1,37 @@
-//Задать одномерный массив и найти в нем минимальный и максимальный элементы
 package Homework1;
-
 
 import java.util.Arrays;
 import java.util.Random;
-public class Task1 {
+
+
+public class Task1_1 {
     public static void main(String[] args) {
         ElementMinMax();
     }
 
     private static void ElementMinMax() {
 
-        int[] array = new int[100];
 
+        int[] array = new int[100];
         Random random = new Random();
+
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(1000);
         }
-        int minElement = array[0];
-        int maxElement = array[0];
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] < minElement) {
-                minElement = array[i];
-            }
-        }
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] > maxElement) {
-                maxElement = array[i];
-            }
+
+        int minElement = Integer.MAX_VALUE;
+        int maxElement = Integer.MIN_VALUE;
+
+        for (int item : array) {
+            maxElement = Math.max(item, maxElement);
+            minElement = Math.min(item, minElement);
         }
         System.out.println(Arrays.toString(array));
         System.out.printf("Минимальный элемент равен %s%n", minElement);
         System.out.printf("Максимальный элемент равен %s%n", maxElement);
     }
+
 }
+
+
+
