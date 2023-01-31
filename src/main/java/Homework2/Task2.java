@@ -23,7 +23,7 @@ public class Task2 {
 
     private static void WriteResultFile() {
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream("src/main/resources/lib/file1.txt");
+            FileOutputStream fileOutputStream = new FileOutputStream("src//main/resources/lib/file1.txt");
             fileOutputStream.write(RepeatsLineHundredTimes().toString().getBytes());
             fileOutputStream.close();
         } catch (IOException e) {
