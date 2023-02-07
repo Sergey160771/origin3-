@@ -7,28 +7,31 @@ import java.io.IOException;
 
 public class Task2 {
     public static void main(String[] args) {
-        RepeatsLineHundredTimes();
-        WriteResultFile();
+        RepeatsLineHundredTimes ();
+        WriteResultFile ();
     }
 
     private static StringBuilder RepeatsLineHundredTimes() {
-        int n = 100;
-        String str = "TEST ";
+        int n=100;
+        String str="TEST ";
 
-        StringBuilder sb = new StringBuilder();
-        sb.append(str.repeat(n));
-        System.out.println(sb);
+        StringBuilder sb=new StringBuilder ();
+        sb.append (str.repeat (n));
+        System.out.println (sb);
         return sb;
     }
 
     private static void WriteResultFile() {
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream("src//main/resources/lib/file1.txt");
-            fileOutputStream.write(RepeatsLineHundredTimes().toString().getBytes());
-            fileOutputStream.close();
+            FileOutputStream fileOutputStream=new FileOutputStream ("src//main/resources/lib/file1.txt");
+            fileOutputStream.write (RepeatsLineHundredTimes ().toString ().getBytes ());
+            fileOutputStream.close ();
         } catch (IOException e) {
-            System.out.println("Проблема вывода!");
-            e.printStackTrace();
+            System.out.println ("Проблема вывода!");
+            e.printStackTrace ();
+        }
+        finally {
+            System.out.println("Окончание");
         }
     }
 }
